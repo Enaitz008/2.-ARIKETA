@@ -1,0 +1,96 @@
+ <!-- Bigarren Orrialdea -->
+ <div id="bigarrena" class="section">
+    <h1>Bigarren Orrialdea</h1>
+    <nav>
+        <a href="2_ariketa.html">Sarrera</a> | 
+        <a href="2.ariketa(1).html">Lehena</a> | 
+        <a href="2.ariketa(3).html">Hirugarrena</a>
+    </nav>
+<style>
+     nav a { margin: 10px; font-weight: bold; text-decoration: none; color: #0066cc; }
+     
+</style>
+        <!-- Musika -->
+        <h2>Musika</h2>
+        <audio controls>
+            <source src="videoplayback (2).m4a" type="audio/mpeg">
+            Zure nabigatzaileak ez du musika erreproduzitzen.
+        </audio>
+    <!DOCTYPE html>
+    <html lang="eu">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Imagen Modal</title>
+        <style>
+            /* Estilos generales */
+            body { font-family: Arial, sans-serif; text-align: left; margin-top: 50px; }
+            img { cursor: pointer; width: 150px; transition: 0.3s; }
+            
+            /* Modal */
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .modal-content {
+                max-width: 80%;
+                max-height: 80%;
+            }
+    
+            /* Botón de cierre */
+            .close {
+                position: absolute;
+                top: 20px;
+                right: 40px;
+                color: #fff;
+                font-size: 35px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .txikia {
+            width: 150px;
+            cursor: pointer;
+        }
+
+        .handia {
+            width: 400px;
+        }
+        </style>
+    </head>
+    <body>
+    
+        <h2>Irudia</h2>
+        <img src="./pexels-francesco-ungaro-1525041.jpg" alt="Irudi txikia" onclick="handitu(this)" class="txikia">
+    
+        <script>
+            function handitu(irudia) {
+                if (irudia.classList.contains("txikia")) {
+                    irudia.classList.remove("txikia");
+                    irudia.classList.add("handia");
+                } else {
+                    irudia.classList.remove("handia");
+                    irudia.classList.add("txikia");
+                }
+            }
+        </script>
+    
+    </body>
+    </html>
+    
+
+    <!-- Bideoa -->
+    <h2>Bideoa</h2>
+    <video controls width="500">
+        <source src="Costa Rica - Cinematic Video FPV drone ｜ Yukix Films.mp4" type="video/mp4">
+        Zure nabigatzaileak ez du bideoa erreproduzitzen.
+    </video>
+</div>

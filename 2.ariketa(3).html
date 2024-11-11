@@ -1,0 +1,260 @@
+    <!-- Hirugarren Orrialdea -->
+<style>
+        /* Testua ezkerretik eskuinera mugitzen */
+        .mugimendua {
+            position: relative;
+            animation: mugituEzkerEskuin 8s infinite linear;
+        }
+
+        @keyframes mugituEzkerEskuin {
+            from { left: 0; }
+            to { left: 100%; }
+        }
+</style>
+    <div id="hirugarrena" class="section">
+        <h1>Hirugarren Orrialdea</h1>
+        <nav>
+            <a href="2_ariketa.html">Sarrera</a> | 
+            <a href="2.ariketa(1).html">Lehena</a> | 
+            <a href="2.ariketa(2).html">Bigarrena</a>
+        </nav>
+<style>
+     nav a { margin: 10px; font-weight: bold; text-decoration: none; color: #0066cc; }
+</style>
+
+
+    </div>
+<h2>Mugitzen den testua</h2>
+    <p class="mugimendua">Eskerrikasko ikusteagatik</p>
+
+</body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Interactiva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay p {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-item {
+                width: 250px;
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-item {
+                width: 200px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="gallery-item">
+            <img src="unnamed.jpg" alt="EZ EGIN CLICK">
+            <div class="overlay">
+                <p>EZ EGIN CLICK</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="unnamed.jpg" alt="Imagen 2">
+            <div class="overlay">
+                <p>EZ EGIN CLICK</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="unnamed.jpg" alt="Imagen 3">
+            <div class="overlay">
+                <p>EZ EGIN CLICK</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="unnamed.jpg" alt="Imagen 4">
+            <div class="overlay">
+                <p>EZ EGIN CLICK</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const items = document.querySelectorAll('.gallery-item');
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                alert('HAU IKUSITA 10 BAT GUTXIENEZ EHHH');
+            });
+        });
+    </script>
+    
+
+</body>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Aleatoria con Fondo Animado</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            background-color: #111;
+            color: white;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .message {
+            font-size: 1.5em;
+            text-align: center;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            animation: slideUp 2s ease-in-out;
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        #canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Bienvenido a la Página Aleatoria</h1>
+    <div class="message">Fondo Animado en Canvas</div>
+
+    <canvas id="canvas"></canvas>
+
+    <script>
+        // Canvas Background Animation
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let circles = [];
+        for (let i = 0; i < 50; i++) {
+            circles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 3 + 2,
+                speedX: Math.random() * 0.5 - 0.25,
+                speedY: Math.random() * 0.5 - 0.25
+            });
+        }
+
+        function drawCircles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            circles.forEach(circle => {
+                ctx.beginPath();
+                ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2);
+                ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+                ctx.fill();
+                ctx.closePath();
+
+                circle.x += circle.speedX;
+                circle.y += circle.speedY;
+
+                if (circle.x + circle.radius > canvas.width || circle.x - circle.radius < 0) {
+                    circle.speedX = -circle.speedX;
+                }
+                if (circle.y + circle.radius > canvas.height || circle.y - circle.radius < 0) {
+                    circle.speedY = -circle.speedY;
+                }
+            });
+            requestAnimationFrame(drawCircles);
+        }
+        drawCircles();
+    </script>
+
+</body>
+</html>
